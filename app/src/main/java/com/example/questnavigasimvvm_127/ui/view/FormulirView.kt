@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -102,5 +103,24 @@ fun FormulirView(
             },
             modifier = Modifier.fillMaxWidth()
         )
+
+        TextField(
+            value = notelepon,
+            onValueChange = {notelepon = it},
+            label = {
+                Text(text = "No Telepon")
+            },
+            placeholder = {
+                Text(text = "Isi No Telpon Anda")
+            },
+            modifier = Modifier.fillMaxWidth(),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+        Spacer(modifier = Modifier.padding(8.dp))
+        Button(onClick = {
+            onSubmitClicked(listData)
+        }) {
+            Text(text = "Simpan")
+        }
     }
 }
