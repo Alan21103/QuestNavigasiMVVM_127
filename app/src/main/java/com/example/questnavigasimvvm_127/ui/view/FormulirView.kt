@@ -91,5 +91,16 @@ fun FormulirView(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
         )
 
+        TextField(
+            value = alamat,
+            onValueChange = {alamat = it},
+            label = {
+                Text(text = "Alamat")
+            },
+            placeholder = {
+                Text(text = "Isi Alamat Anda")
+            },
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
