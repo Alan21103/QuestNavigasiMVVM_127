@@ -1,9 +1,13 @@
 package com.example.questnavigasimvvm_127.ui.view
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -46,5 +50,30 @@ fun FormulirView(
             },
             modifier = Modifier.fillMaxWidth()
         )
+        TextField(
+            value = nim,
+            onValueChange = {nim = it},
+            label = {
+                Text(text = "NIM")
+            },
+            placeholder = {
+                Text(text = "Isi NIM Anda")
+            },
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Row (modifier = Modifier.fillMaxWidth().padding(5.dp)) {
+            listJK.forEach{selectedGender ->
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = gender == selectedGender,
+                        onClick = {gender = selectedGender})
+
+                    Text (text = selectedGender,
+                        modifier = Modifier.padding(start = 3.dp))
+                }
+                Spacer(modifier = Modifier.width(16.dp))
+            }
+        }
     }
 }
