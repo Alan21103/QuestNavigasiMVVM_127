@@ -20,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuestNavigasiMVVM_127Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    NavigationControl(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
